@@ -1,0 +1,16 @@
+<h1>Guess the number!</h1>
+	<p class="well lead">Guess the computer generated random number between 1 and 1000.</p>
+	<div class="container" ng-controller="guessController">
+		
+		<label>Your Guess</label>
+		<input type="number" name="number" ng-model="guess">
+		
+		<button ng-click="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>
+		<button ng-click="initializeGame()" class="btn btn-warning btn-sm">Reset</button>
+
+		<p>Nº of guesses: {{ noOfTries }}</p>
+		
+		<p ng-show="deviation<0" class="alert alert-warning">Your number is higher</p>
+		<p ng-show="deviation>0" class="alert alert-warning">Your number is lower</p>
+		<p ng-show="deviation===0" class="alert alert-success">You guessed it!</p>
+</div>
